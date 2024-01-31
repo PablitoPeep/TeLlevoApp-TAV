@@ -1,0 +1,125 @@
+<ion-content>
+  <div class="login-section">
+    <div class="header ion-padding">
+      <h1>Bienvenida/o</h1>
+      <p>Regístrate para continuar</p>
+    </div>
+
+    <!-- Pestaña 1 -->
+
+    <div class="login-form">
+      <div class="form-input">
+        <ion-icon name="mail-outline"></ion-icon>
+        <ion-item>
+          <ion-label position="floating">Nombre de usuario</ion-label>
+          <ion-input
+            type="text"
+            [(ngModel)]="userDetails.username"
+            required
+          ></ion-input>
+        </ion-item>
+      </div>
+      <div class="form-input">
+        <ion-icon name="mail-outline"></ion-icon>
+        <ion-item>
+          <ion-label position="floating">Nombre</ion-label>
+          <ion-input
+            type="text"
+            [(ngModel)]="userDetails.name"
+            required
+          ></ion-input>
+        </ion-item>
+      </div>
+      <div class="form-input">
+        <ion-icon name="mail-outline"></ion-icon>
+        <ion-item>
+          <ion-label position="floating">Apellido</ion-label>
+          <ion-input
+            type="text"
+            [(ngModel)]="userDetails.lastName"
+            required
+          ></ion-input>
+        </ion-item>
+      </div>
+      <!-- Pestaña 2 -->
+
+      <div class="form-input">
+        <ion-icon name="mail-outline"></ion-icon>
+        <ion-item>
+          <ion-label position="floating">Correo electrónico</ion-label>
+          <ion-input
+            type="email"
+            [(ngModel)]="userDetails.email"
+            required
+          ></ion-input>
+        </ion-item>
+      </div>
+      <div class="form-input">
+        <ion-icon name="mail-outline"></ion-icon>
+        <ion-item>
+          <ion-label position="floating">Numero telefónico</ion-label>
+          <ion-input
+            type="text"
+            [(ngModel)]="userDetails.phone"
+            required
+          ></ion-input>
+        </ion-item>
+      </div>
+      <div class="form-input">
+        <ion-icon name="lock-closed-outline"></ion-icon>
+        <ion-item>
+          <ion-label position="floating">Contraseña</ion-label>
+          <ion-input
+            type="password"
+            [(ngModel)]="userDetails.password"
+            required
+          ></ion-input>
+        </ion-item>
+      </div>
+      <div class="form-input">
+        <ion-segment [(ngModel)]="userDetails.isDriver" color="primary">
+          <ion-segment-button value="false">
+            <ion-label>Pasajero</ion-label>
+          </ion-segment-button>
+          <ion-segment-button value="true">
+            <ion-label>Chofer</ion-label>
+          </ion-segment-button>
+        </ion-segment>
+      </div>
+
+      <!-- Pestaña 3 (Opcional) -->
+      <div class="form-input">
+        <ion-item>
+          <ion-label position="floating">Vehículo</ion-label>
+          <ion-input [(ngModel)]="userDetails.vehiculo"></ion-input>
+        </ion-item>
+      </div>
+      <div class="form-input">
+        <ion-item>
+          <ion-label position="floating">Marca del vehículo</ion-label>
+          <ion-input [(ngModel)]="userDetails.carBrand"></ion-input>
+        </ion-item>
+      </div>
+      <div class="form-input">
+        <ion-item>
+          <ion-label position="floating">Modelo del vehículo</ion-label>
+          <ion-input [(ngModel)]="userDetails.carModel"></ion-input>
+        </ion-item>
+      </div>
+      <!-- Agrega más campos según sea necesario para los detalles del auto -->
+    </div>
+  </div>
+
+  <div class="action-buttons ion-padding">
+    <ion-button
+      class="signup-button"
+      size="large"
+      fill="outline"
+      routerLink="/login"
+      mode="ios"
+      (click)="register()"
+    >
+      Registrarse
+    </ion-button>
+  </div>
+</ion-content>

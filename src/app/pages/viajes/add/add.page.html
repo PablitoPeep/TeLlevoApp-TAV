@@ -1,0 +1,29 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons>
+      <ion-back-button slot="start" defaultHref="/pizzas"></ion-back-button>
+      <ion-title>Agregar viajes</ion-title>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Agregar Viaje</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-item>
+        <ion-input [(ngModel)]="viaje.direccion" type="text" label="direccion" labelPlacement="floating" ></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-input [(ngModel)]="viaje.hora" type="text" label="Hora" labelPlacement="floating" ></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-input [(ngModel)]="viaje.cupos" type="text" label="Asientos" labelPlacement="floating" ></ion-input>
+      </ion-item>
+      
+      <ion-button color="primary" (click)="addViaje()">Agregar</ion-button>
+    </ion-card-content>
+  </ion-card>
+</ion-content>

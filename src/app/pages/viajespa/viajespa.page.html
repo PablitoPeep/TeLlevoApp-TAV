@@ -1,0 +1,20 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons>
+      <ion-back-button slot="start" defaultHref="/pizzas"></ion-back-button>
+      <ion-title>Viajes</ion-title>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-list lines="full">
+    <ion-item *ngFor="let aux of listaViajes" [routerLink]="['/viajes/detail/', aux.id]">
+      <ion-avatar slot="start">
+        <ion-img [src]=""></ion-img>
+      </ion-avatar>
+      <ion-label>{{ aux.direccion }}</ion-label>
+    </ion-item>
+  </ion-list>
+ 
+</ion-content>

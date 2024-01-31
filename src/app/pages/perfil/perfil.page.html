@@ -1,0 +1,116 @@
+<!-- perfil.page.html -->
+
+<ion-content>
+  <div class="container">
+    <ion-button color="dark" fill="clear" routerLink="/home">
+      <ion-icon slot="icon-only" name="arrow-back-circle-outline"></ion-icon>
+    </ion-button>
+
+    <ion-list mode="ios">
+      <ion-list-header> Información personal </ion-list-header>
+
+      <ion-item lines="full">
+        <ion-label slot="start" class="title">
+          <ion-icon name="at-outline"></ion-icon>
+          Usuario
+        </ion-label>
+        <ion-label
+          slot="end"
+          class="ion-text-wrap userInfo"
+          style="color: black"
+          >{{ userProfile?.username }}</ion-label
+        >
+      </ion-item>
+      <ion-item lines="full">
+        <ion-label slot="start" class="title">
+          <ion-icon name="person-outline"></ion-icon>
+          Nombre
+        </ion-label>
+        <ion-label slot="end" class="userInfo"
+          >{{ userProfile?.name }}</ion-label
+        >
+      </ion-item>
+
+      <ion-item lines="full">
+        <ion-label slot="start" class="title">
+          <ion-icon name="person-outline"></ion-icon>
+          Apellido
+        </ion-label>
+        <ion-label slot="end" class="userInfo"
+          >{{ userProfile?.lastName }}</ion-label
+        >
+      </ion-item>
+
+      <ion-item lines="full">
+        <ion-label slot="start" class="title">
+          <ion-icon name="mail-outline"></ion-icon>
+          Correo electrónico	
+        </ion-label>
+        <ion-label slot="end" class="ion-text-wrap userInfo"
+          >{{ userProfile?.email }}</ion-label
+        >
+      </ion-item>
+
+      <ion-item lines="full">
+        <ion-label slot="start" class="title">
+          <ion-icon name="call-outline"></ion-icon>
+          Teléfono
+        </ion-label>
+        <ion-label slot="end" class="ion-text-wrap userInfo"
+          >{{ userProfile?.phone }}</ion-label
+        >
+      </ion-item>
+    </ion-list>
+
+    <!-- Si el Usuario es Chofer -->
+    <div class="esChofer" *ngIf="userProfile.isDriver">
+      <ion-list mode="ios">
+        <ion-list-header> Información de Chofer </ion-list-header>
+        <ng-container *ngIf="userProfile?.isDriver">
+          <!-- Mostrar información de chofer -->
+          <ion-item lines="full">
+            <ion-label slot="start" class="title">Vehículo</ion-label>
+            <ion-label slot="end" class="ion-text-wrap userInfo"
+              >{{ userProfile?.vehiculo }}</ion-label
+            >
+          </ion-item>
+          <ion-item lines="full">
+            <ion-label slot="start" class="title">Marca</ion-label>
+            <ion-label slot="end" class="ion-text-wrap userInfo"
+              >{{ userProfile?.carBrand }}</ion-label
+            >
+          </ion-item>
+          <ion-item lines="full">
+            <ion-label slot="start" class="title">Modelo</ion-label>
+            <ion-label slot="end" class="ion-text-wrap userInfo"
+              >{{ userProfile?.carModel }}</ion-label
+            >
+          </ion-item>
+        </ng-container>
+      </ion-list>
+    </div>
+    <ion-button
+      (click)="openEditProfileModal()"
+      fill="clear"
+      mode="ios"
+      expand="full"
+      size="large"
+    >
+      Editar perfil
+    </ion-button>
+    <ion-button
+      (click)="logout()"
+      fill="clear"
+      mode="ios"
+      expand="full"
+      size="large"
+      >Cerrar sesión</ion-button
+    >
+  </div>
+
+  <ion-modal>
+    <ng-template>
+      <!-- ... Código del modal de edición -->
+    </ng-template>
+  </ion-modal>
+</ion-content>

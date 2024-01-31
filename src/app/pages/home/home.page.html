@@ -1,0 +1,37 @@
+<ion-content fullscreen fixed>
+  <ion-fab horizontal="center" vertical="top" slot="fixed">
+    <ion-fab-button>
+      <ion-icon name="menu-outline"></ion-icon>
+    </ion-fab-button>
+    <ion-fab-list>
+      <ion-fab-button>
+        <ion-icon name="map-outline" routerLink="/map-common"></ion-icon>
+      </ion-fab-button>
+      <ion-fab-button>
+        <ion-icon name="person-outline" routerLink="/perfil"></ion-icon>
+      </ion-fab-button>
+      <ion-fab-button>
+        <ion-icon
+          name="settings-outline"
+          routerLink="/configuraciones"
+        ></ion-icon>
+      </ion-fab-button>
+      <ion-button (click)="openDriverModal()">
+        <ion-icon slot="icon-only" name="car-outline"></ion-icon>
+      </ion-button>
+      <!-- Contenido específico para pasajero -->
+      <ion-button (click)="irViaje()">
+        <ion-icon slot="icon-only" name="search-outline"></ion-icon>
+      </ion-button>
+    </ion-fab-list>
+  </ion-fab>
+
+  <div class="card">
+    <div class="card-body">
+      <div id="map"></div>
+    </div>
+  </div>
+  
+
+  <!-- Lógica condicional para mostrar elementos específicos para chofer o pasajero -->
+</ion-content>

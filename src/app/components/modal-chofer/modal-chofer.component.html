@@ -1,0 +1,101 @@
+<ion-modal #modal trigger="open-modal" [isOpen]="true" mode="ios" [initialBreakpoint]="0.25"
+[breakpoints]="[0.25, 0.5, 0.75, 1]" [backdropDismiss]="false" [backdropBreakpoint]="0.5">
+<ng-template>
+  <ion-content class="ion-padding">
+    <ion-list>
+      <ion-item>
+        <ion-label>Crear Viaje</ion-label>
+      </ion-item>
+    </ion-list>
+    <ion-grid fixed>
+      <ion-row class="ion-align-items-center">
+        <ion-col size="12">
+          <!-- Contenido adicional del modal principal -->
+        </ion-col>
+        <ion-col size="12" class="ion-align-items-center">
+          <ion-button mode="ios" color="success" expand="block" (click)="irAdd()">
+            <ion-icon slot="end" name="close-outline"></ion-icon>
+            Crear Viaje
+          </ion-button>
+          <ion-button mode="ios" color="warning" expand="block">
+            <ion-icon slot="end" name="close-outline"></ion-icon>
+            Finalizar Viaje
+          </ion-button>
+
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col size="12">
+          <div id="indicators"></div>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-content>
+</ng-template>
+</ion-modal>
+
+<!-- Modal para crear viaje -->
+<ion-modal #modalTemplate>
+<ng-template>
+  <ion-content class="ion-padding">
+    <ion-list [formGroup]="viajeForm">
+      <ion-item>
+        <ion-label position="floating">Nombre del Viaje</ion-label>
+        <ion-input formControlName="nombreViaje" required></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">Inicio</ion-label>
+        <ion-input formControlName="localizacionInicio" required></ion-input>
+      </ion-item><!-- Agrega estos campos al formulario existente -->
+      <ion-item>
+        <ion-label position="floating">Latitud Inicio</ion-label>
+        <ion-input formControlName="latitudInicio" type="number" step="any"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">Longitud Inicio</ion-label>
+        <ion-input formControlName="longitudInicio" type="number" step="any"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">Destino</ion-label>
+        <ion-input formControlName="localizacionFinal" required></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">Latitud Final</ion-label>
+        <ion-input formControlName="latitudFinal" type="number" step="any"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">Longitud Final</ion-label>
+        <ion-input formControlName="longitudFinal" type="number" step="any"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">Tarifa</ion-label>
+        <ion-input formControlName="tarifa" required></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">Tiempo</ion-label>
+        <ion-input formControlName="tiempoEstimado" type="time" required></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">Estado</ion-label>
+        <ion-select formControlName="estado" placeholder="Seleccionar Estado">
+          <ion-select-option value="disponible">Disponible</ion-select-option>
+          <ion-select-option value="no-disponible">No disponible</ion-select-option>
+        </ion-select>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">Asientos</ion-label>
+        <ion-input formControlName="asientosd" required></ion-input>
+      </ion-item>
+      <!-- Agrega más elementos para otros campos -->
+    </ion-list>
+    <ion-button mode="ios" color="success" expand="block" (click)="guardarViaje()" [disabled]="!viajeForm.valid">
+      <ion-icon slot="end" name="checkmark-outline"></ion-icon>
+      Guardar Viaje
+    </ion-button>
+    <ion-button mode="ios" color="danger" expand="block" (click)="cerrarModalCrearViaje()">
+      <ion-icon slot="end" name="close-outline"></ion-icon>
+      Cancelar
+    </ion-button>
+  </ion-content>
+</ng-template>
+</ion-modal>

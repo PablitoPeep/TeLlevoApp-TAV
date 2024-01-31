@@ -1,0 +1,74 @@
+ion-content {
+  --background: linear-gradient(0deg, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.1)),
+    url("../../../assets/img/3.gif") no-repeat center center / cover; /* Cambia los colores según tus preferencias */
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.splash-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  font-size: 18px;
+}
+
+.circle {
+  position: relative;
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  background-color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 20px rgba(255, 255, 255, 0.699);
+}
+
+.circle img {
+  height: 100px;
+  width: 100px;
+  border-radius: 50%;
+}
+
+.progress {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border: 5px solid #ffffff; /* Color de la barra de progreso */
+  border-top-color: #00577f65; /* Color de la parte superior de la barra de progreso */
+  border-radius: 50%;
+  animation: spin 2s linear infinite; /* Animación de rotación */
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+/* Responsive*/
+
+@media (max-width: 767px) {
+  .circle {
+    width: 100px;
+    height: 100px;
+  }
+
+  .text {
+    font-size: 18px;
+  }
+}
+
+@media (min-width: 768px) {
+  .circle img {
+    height: 150px;
+    width: 150px;
+  }
+}

@@ -1,0 +1,25 @@
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* Ajusta la altura según tus necesidades */
+  margin: 0;
+}
+
+.card {
+  width: 300px; /* Ajusta el ancho según tus preferencias */
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.card-body {
+  padding: 15px;
+}
+
+#map {
+  width: 100%; /* Ajusta el ancho del mapa según tus preferencias */
+  height: 200px; /* Ajusta la altura del mapa según tus preferencias */
+}
+

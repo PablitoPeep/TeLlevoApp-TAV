@@ -1,0 +1,55 @@
+<ion-content>
+  <div class="login-section">
+    <div class="header ion-padding">
+      <h1>Bienvenida/o</h1>
+      <p>Inicia sesión para continuar o regístrate si eres nueva/o</p>
+    </div>
+    <div class="login-form">
+      <div class="form-input">
+        <ion-icon name="mail-outline"></ion-icon>
+        <ion-item>
+          <ion-label position="floating">Correo electrónico</ion-label>
+          <ion-input type="email" [(ngModel)]="email" required></ion-input>
+        </ion-item>
+      </div>
+      <div class="form-input">
+        <ion-icon name="lock-closed-outline"></ion-icon>
+        <ion-item>
+          <ion-label position="floating">Contraseña</ion-label>
+          <ion-input
+            type="password"
+            [(ngModel)]="password"
+            required
+          ></ion-input>
+        </ion-item>
+      </div>
+    </div>
+    <div class="action-buttons ion-padding">
+      <ion-button
+        class="login-button"
+        mode="ios"
+        size="large"
+        fill="outline "
+        (click)="login()"
+      >
+        Iniciar sesión
+      </ion-button>
+      <ion-button
+        class="signup-button"
+        size="large"
+        fill="outline"
+        routerLink="/registro"
+        mode="ios"
+      >
+        Registrarse
+      </ion-button>
+      <ion-button
+        fill="clear"
+        routerLink="/recuperar"
+        class="forget-pass"
+        mode="ios"
+        >¿Olvidaste tu contraseña?
+      </ion-button>
+    </div>
+  </div>
+</ion-content>
